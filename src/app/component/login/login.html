@@ -1,0 +1,47 @@
+<div class="flex min-h-screen items-center justify-center px-4 bg-gradient-to-tl from-purple-500 to-pink-400">
+  <div class="w-full max-w-[56rem] bg-white p-8 rounded-xl shadow-2xl">
+    <h1 class="text-2xl font-bold text-center mb-1 uppercase text-[#f76d85]">Sign In</h1>
+    <div class="border-2 border-purple-600 w-[5rem] justify-self-center"></div>
+
+    <div class="flex w-full flex-col-reverse sm:flex-row">
+      <div class="sm:w-1/2">
+        <img src="public/signup/login.jpg" alt="">
+      </div>
+      <div class="sm:w-1/2">
+        <form [formGroup]="Loginform" (ngSubmit)="onSubmit()" class="mt-[20%]">
+          <!-- <label class="block mb-2 font-semibold">Username</label> -->
+          <input formControlName="username" type="text" placeholder="Enter username"
+            class="w-full p-2 mb-4 border-2 rounded-full" />
+          <div *ngIf="Loginform.controls['username'].touched && Loginform.controls['username'].invalid"
+            class="text-red-500 text-sm mb-2">
+            Username is required
+          </div>
+
+          <!-- <label class="block mb-2 font-semibold">Password</label> -->
+          <input formControlName="password" type="password" placeholder="Enter password"
+            class="w-full p-2 mb-4 border-2 rounded-full" />
+          <div *ngIf="Loginform.controls['password'].touched && Loginform.controls['password'].invalid"
+            class="text-red-500 text-sm mb-2">
+            Password is required
+          </div>
+
+          <div class="flex justify-center w-full">
+            <button type="submit"
+              class="w-[29%] bg-green-600 text-white p-2 rounded-full hover:bg-green-700 mb-4 font-semibold">
+              Sign In
+            </button>
+          </div>
+
+
+          <div class="text-center">
+            <a routerLink="/forgot-password" class="text-blue-600 hover:underline text-sm">Forgot Password?</a>
+          </div>
+          <div class="text-center mt-2 text-sm">
+            Don't have an account? <a routerLink="/signup" class="text-blue-600 hover:underline">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

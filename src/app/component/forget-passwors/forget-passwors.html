@@ -1,0 +1,107 @@
+<!-- <div class="flex min-h-screen items-center justify-center px-4 bg-gradient-to-tl from-purple-500 to-pink-400">
+    <div class="w-full max-w-[55rem] bg-white p-8 rounded-xl shadow-2xl">
+        <h1 class="text-2xl font-bold text-center mb-1 uppercase text-[#f76d85]">Reset Password</h1>
+        <div class="border-2 border-purple-600 w-[5rem] justify-self-center"></div>
+
+        <div class="flex flex-col-reverse sm:flex-row">
+            <div class="sm:w-1/2">
+                <img src="public/signup/pwd.jpg" alt="">
+            </div>
+            <div class="sm:w-1/2">
+                <form [formGroup]="forgetPWD" (ngSubmit)="onSubmit()" class="mt-[8rem]">
+                    <input formControlName="email" type="text" placeholder="Enter your Email"
+                        class="w-full p-2 mb-2 border-2 rounded-full" />
+                    <div *ngIf="forgetPWD.controls['email'].touched && forgetPWD.controls['email'].invalid"
+                        class="text-red-500 text-sm mb-2">Email is required</div>
+
+
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="w-1/2 bg-yellow-600 text-white p-2 rounded-full hover:bg-yellow-700 mb-4 font-semibold">
+                            Send Reset Link
+                        </button>
+                    </div>
+
+
+                    <div class="text-center mt-2 text-sm">
+                        Remembered your password? <a routerLink="/signin" class="text-blue-600 hover:underline">Sign
+                            In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+<!-- <div class="flex min-h-screen items-center justify-center px-4 bg-gradient-to-tl from-purple-500 to-pink-400">
+    <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-2xl">
+        <h1 class="text-2xl font-bold text-center mb-1 uppercase text-[#f76d85]">Forgot Password</h1>
+        <div class="border-2 border-purple-600 w-[5rem] justify-self-center mb-6"></div>
+
+        <form [formGroup]="forgetPWD" (ngSubmit)="onSubmit()">
+            <input formControlName="email" type="email" placeholder="Enter your registered email"
+                class="w-full p-2 mb-4 border-2 rounded-full" />
+            <div *ngIf="forgetPWD.controls['email'].touched && forgetPWD.controls['email'].invalid"
+                class="text-red-500 text-sm mb-2">
+                Valid email is required
+            </div>
+
+            <div class="flex justify-center">
+                <button type="submit"
+                    class="w-[60%] bg-green-600 text-white p-2 rounded-full hover:bg-green-700 font-semibold">
+                    Send Reset Link
+                </button>
+            </div>
+        </form>
+
+        <div class="text-center mt-4 text-sm">
+            <a routerLink="/login" class="text-blue-600 hover:underline">Back to Login</a>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- forgot-password.component.html -->
+<!-- forgot-password.component.html -->
+
+
+<div class="flex min-h-screen items-center justify-center px-4 bg-gradient-to-tl from-purple-500 to-pink-400">
+    <div class="w-full max-w-[55rem] bg-white p-8 rounded-xl shadow-2xl">
+        <h1 class="text-2xl font-bold text-center mb-1 uppercase text-[#f76d85]">Forgot Password</h1>
+        <div class="border-2 border-purple-600 w-[5rem] justify-self-center"></div>
+        <div class="flex flex-col-reverse sm:flex-row">
+            <div class="sm:w-1/2">
+                <img src="public/signup/pwd.jpg" alt="">
+            </div>
+            <div class="sm:w-1/2 border-2 border-[#c862c2] rounded-xl my-6">
+                <form (ngSubmit)="onSubmit()" class="sm:mt-[7rem] mt-[2rem]">
+                    <div class="flex justify-center">
+                        <input type="email" [(ngModel)]="email" name="email" placeholder="Enter your registered email"
+                            class="w-[87%] p-2 mb-4 border-2 rounded-full" />
+                    </div>
+
+                    <div class="flex justify-center w-full">
+                        <button type="submit" routerLink="/reset-password"
+                            class="bg-yellow-600 text-white p-2 rounded-full hover:bg-yellow-700 mb-4 font-semibold">Send
+                            Reset Link</button>
+                    </div>
+                    <p *ngIf="message" style="color:green">{{ message }}</p>
+                    <p *ngIf="error" style="color:red">{{ error }}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- <h2>Forgot Password</h2>
+<form (ngSubmit)="onSubmit()">
+  <input type="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required>
+  <button type="submit">Send Reset Link</button>
+</form>
+
+<p *ngIf="message" style="color:green">{{ message }}</p>
+<p *ngIf="error" style="color:red">{{ error }}</p> -->

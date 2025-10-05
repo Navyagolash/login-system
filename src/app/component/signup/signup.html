@@ -1,0 +1,46 @@
+<div class="flex min-h-screen items-center justify-center px-4 bg-gradient-to-tl from-purple-500 to-pink-400">
+    <div class="w-full max-w-[56rem] bg-white p-8 rounded-xl drop-shadow-2xl">
+        <h1 class="text-2xl font-bold text-center mb-1 uppercase text-[#f76d85]">Sign Up</h1>
+        <div class="border-2 border-purple-600 w-[5rem] justify-self-center"></div>
+        <div class="flex flex-col-reverse sm:flex-row">
+            <div class="sm:w-1/2">
+                <img src="public/signup/signup.jpg" alt="">
+            </div>
+            <div class="sm:w-1/2">
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="mt-[14%]">
+                    <!-- <label class="block mb-2 font-semibold">Username</label> -->
+                    <input formControlName="username" type="text" placeholder="Enter username"
+                        class="w-full p-2 mb-[1.5rem] border-2 rounded-full" />
+                    <div *ngIf="signUpForm.controls['username'].touched && signUpForm.controls['username'].invalid"
+                        class="text-red-500 text-sm mb-2">Username is required</div>
+
+                    <!-- <label class="block mb-2 font-semibold">Email</label> -->
+                    <input formControlName="email" type="email" placeholder="Enter email"
+                        class="w-full p-2 mb-[1.5rem] border rounded-full" />
+                    <div *ngIf="signUpForm.controls['email'].touched && signUpForm.controls['email'].invalid"
+                        class="text-red-500 text-sm mb-2">Valid email required</div>
+
+                    <!-- <label class="block mb-2 font-semibold">Password</label> -->
+                    <input formControlName="password" type="password" placeholder="Enter password"
+                        class="w-full p-2 mb-[1.5rem] border rounded-full" />
+                    <div *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['password'].invalid"
+                        class="text-red-500 text-sm mb-2">Password required</div>
+
+                    <div class="w-full flex justify-center">
+                        <button type="submit"
+                            class="w-[29%] bg-green-600 text-white p-2 rounded-full hover:bg-green-700 mb-4 font-semibold">
+                            Sign Up
+                        </button>
+                    </div>
+
+
+                    <div class="text-center mt-2 text-sm">
+                        Already have an account? <a routerLink="/login" class="text-blue-600 hover:underline">Sign
+                            In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
