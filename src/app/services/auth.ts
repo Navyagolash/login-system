@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class Auth {
-  private baseUrl = 'http://localhost:5000/api/auth';
+  private baseUrl = 'https://auth-backend-nnnr.onrender.com/api/auth';
 
   constructor(private http: HttpClient) { }
 
