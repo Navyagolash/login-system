@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Auth } from '../../services/auth';
+import {Users} from './../../users';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -15,13 +16,20 @@ export class LoginComponent {
 
   Loginform!: FormGroup;
 
-  constructor(private fb: FormBuilder, private auth: Auth) { }
-
+  constructor(private fb: FormBuilder, private auth: Auth,private user:Users) { }
+  use:any = [];
   ngOnInit() {
     this.Loginform = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    this.user.getUsers().subscribe((data)=>{
+      this.use = data;
+      console.log(this.use);
+    },error=>{
+      alert("error fetching users")
+    })
   }
 
   onSubmit() {
