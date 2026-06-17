@@ -1,59 +1,162 @@
-# LoginSystem
+# 🔐 Login Authentication System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+A secure user authentication system built using modern web technologies. This project provides user registration, login, JWT-based authentication, protected routes, password hashing, and session management.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+- User Registration (Sign Up)
+- User Login (Sign In)
+- JWT Authentication
+- Password Hashing with bcrypt
+- Protected Routes
+- User Session Management
+- Form Validation
+- Error Handling
+- Responsive UI
+- Secure API Integration
 
-```bash
-ng serve
-```
+## 🛠️ Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Frontend
+- Angular / React
+- TypeScript
+- HTML5
+- CSS3
+- Bootstrap
 
-## Code scaffolding
+### Backend
+- Node.js
+- Express.js
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Database
+- MongoDB
+- Mongoose
 
-```bash
-ng generate component component-name
-```
+### Authentication
+- JWT (JSON Web Token)
+- bcrypt.js
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📂 Project Structure
 
 ```bash
-ng test
+Login-Authentication-System/
+│
+├── client/
+│   ├── src/
+│   ├── components/
+│   └── services/
+│
+├── server/
+│   ├── controllers/
+│   ├── routes/
+│   ├── middleware/
+│   ├── models/
+│   └── config/
+│
+├── .env
+├── package.json
+└── README.md
 ```
 
-## Running end-to-end tests
+## 🔑 Authentication Flow
 
-For end-to-end (e2e) testing, run:
+1. User registers with email and password.
+2. Password is hashed using bcrypt.
+3. User logs in with credentials.
+4. Server validates credentials.
+5. JWT token is generated.
+6. Token is stored on client side.
+7. Protected APIs verify JWT before granting access.
+
+## 📸 Screenshots
+
+### Login Page
+Add screenshot here
+
+### Registration Page
+Add screenshot here
+
+### Dashboard
+Add screenshot here
+
+## ⚙️ Installation
+
+### Clone Repository
 
 ```bash
-ng e2e
+git clone https://github.com/yourusername/login-authentication-system.git
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Backend Setup
 
-## Additional Resources
+```bash
+cd server
+npm install
+npm start
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Frontend Setup
+
+```bash
+cd client
+npm install
+npm start
+```
+
+## 🔒 Environment Variables
+
+Create a `.env` file:
+
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+```
+
+## API Endpoints
+
+### Register User
+
+```http
+POST /api/auth/register
+```
+
+### Login User
+
+```http
+POST /api/auth/login
+```
+
+### Get User Profile
+
+```http
+GET /api/auth/profile
+```
+
+## 🎯 Key Learnings
+
+- JWT Authentication
+- Password Encryption
+- REST API Development
+- MongoDB Integration
+- Authentication Middleware
+- Route Protection
+- State Management
+- Frontend & Backend Communication
+
+## 👨‍💻 Author
+
+Navya Golash
+
+- Frontend Developer
+- Angular Developer
+- MERN Stack Enthusiast
+
+## ⭐ Future Enhancements
+
+- Forgot Password
+- Email Verification
+- Google Authentication
+- Role-Based Access Control
+- Refresh Tokens
+- Multi-Factor Authentication
